@@ -3,7 +3,7 @@ package search.linearSearch;
 public class Main {
     public static void main(String[] args) {
 
-        int[] array={2,3,5,7,11,13,17,23,29,31,37};
+        int[] array={91,29,11,17,23,2,3,13,5,7,31,37};
 
         //index answer
         int answerIndex=linearSearch(array,7);
