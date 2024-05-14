@@ -1,3 +1,5 @@
+package search.linearSearch;
+
 public class StringLinearSearch {
     public static void main(String[] args) {
 
