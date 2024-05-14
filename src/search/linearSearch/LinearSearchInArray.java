@@ -1,5 +1,7 @@
 package search.linearSearch;
 
+import java.util.Arrays;
+
 public class LinearSearchInArray {
     public static void main(String[] args) {
         int[][] array2d={
@@ -7,12 +9,25 @@ public class LinearSearchInArray {
                 {10,11,87,56},
                 {14,67,23}
         };
-        int[] answerIndex=linearSearch(array2d,11);
+        int[] answerIndex=linearSearch(array2d,67);
         int answer=array2d[answerIndex[0]][answerIndex[1]];
+        int maxNum=findMaxNumber(array2d);
 
-        System.out.println("index value " + answerIndex);
+        System.out.println("index value " + Arrays.toString(answerIndex));
         System.out.println("answer " + answer);
         System.out.println("is present " + linearSearch2(array2d,87));
+        System.out.println("Maximum Value "+ maxNum);
+    }
+
+    static int findMaxNumber(int[][] arr ){
+        int maxVal=Integer.MIN_VALUE;
+        for(int[] i : arr){
+            for(int j : i){
+                if(j>maxVal)
+                    maxVal=j;
+            }
+        }
+        return maxVal;
     }
 
     static int[] linearSearch(int[][] array ,int target){
