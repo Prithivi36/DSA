@@ -15,9 +15,9 @@ public class Main {
         //boolen result
         boolean answerBoolean=linearSearch3(array,7);
 
-        System.out.println(answerIndex);
-        System.out.println(answerElement);
-        System.out.println(answerBoolean);
+        System.out.println("Index answer "+answerIndex);
+        System.out.println("Element answer " +answerElement);
+        System.out.println("Boolean answer "+answerBoolean);
 
     }
 
