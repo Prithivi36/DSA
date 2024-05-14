@@ -20,6 +20,9 @@ public class Main {
     }
 
     static int linearSearch(int[] arr, int target){
+        if(arr.length==0)
+            return -1;
+
         for(int i =01;i< arr.length;i++){
             if(arr[i] == target){
                 return i;
@@ -29,6 +32,9 @@ public class Main {
     }
 
     static int linearSearch2(int[] arr, int target){
+        if(arr.length==0)
+            return Integer.MAX_VALUE;
+
         for(int val : arr){
             if(val == target){
                 return val;
@@ -38,6 +44,9 @@ public class Main {
     }
 
     static boolean linearSearch3(int[] arr, int target){
+        if(arr.length==0)
+            return false;
+
         for(int val : arr){
             if(val == target){
                 return true;
