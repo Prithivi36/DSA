@@ -2,8 +2,8 @@ package search.binarySearch;
 
 public class SearchInRotatedArray {
     public static void main(String[] args) {
-        int[] array={1};
-        System.out.println(search(array,0));
+        int[] array={5,1,3};
+        System.out.println(search(array,3));
     }
     static public int search(int[] nums, int target) {
         int pivot=0;
@@ -22,13 +22,14 @@ public class SearchInRotatedArray {
 
         while(start<=end){
             int mid=start+(end-start)/2;
-
+            if(arr[0]<arr[arr.length-1])
+                return arr.length-1;
             if(arr[mid]>arr[mid+1]){
                 return mid;
             }
-            if(arr[mid]>start)
+            if(arr[mid]>arr[start])
                 start=mid;
-            if(arr[mid]<start)
+            if(arr[mid]<arr[start])
                 end=mid-1;
 
         }
