@@ -11,7 +11,7 @@ public class FindingInInfiniteArray {
 
         while (arr[end]<target) {
             int temp = end + 1;
-            end=end+((end-(start-1))*2);
+            end=end+((end-start+1)*2);
             start=temp;
         }
 
