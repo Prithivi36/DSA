@@ -2,34 +2,37 @@ package search.binarySearch;
 
 public class SearchInRotatedArray {
     public static void main(String[] args) {
-        int[] array={5,1,3};
-        System.out.println(search(array,3));
+        int[] array={3,4,5,6,1,2};
+        System.out.println(findPivot(array));
+        System.out.println(search(array,2));
     }
     static public int search(int[] nums, int target) {
-        int pivot=0;
-        if(nums.length>1){
-        pivot=findPivot(nums);
-        }
-        if(nums.length>1){
+
+        int pivot=findPivot(nums);
+
+        if(pivot!=-1){
             if(nums[0]>target)
                 return binarySearch(nums,target,pivot+1,nums.length-1);
+            return binarySearch(nums,target,0,pivot);
         }
-        return binarySearch(nums,target,0,pivot);
+        return binarySearch(nums,target,0, nums.length-1);
     }
     static int findPivot(int[] arr){
         int start=0;
         int end=arr.length-1;
 
-        while(start<=end){
+        while(arr.length>1 && start<=end){
             int mid=start+(end-start)/2;
-            if(arr[0]<arr[arr.length-1])
-                return arr.length-1;
-            if(arr[mid]>arr[mid+1]){
+
+            if(mid<end && arr[mid]>arr[mid+1]){
                 return mid;
             }
+            if(mid>start && arr[mid]<arr[mid-1]){
+                return mid-1;
+            }
             if(arr[mid]>arr[start])
-                start=mid;
-            if(arr[mid]<arr[start])
+                start=mid+1;
+            else if(arr[mid]<=arr[start])
                 end=mid-1;
 
         }
