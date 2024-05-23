@@ -8,6 +8,8 @@ public class Main {
         ll.insertFirst(15);
         ll.insertFirst(20);
         ll.insertEnd(55);
+        ll.insertMiddle(51,2);
+        ll.deleteFirst();
         ll.display();
     }
 }

@@ -3,12 +3,14 @@ package DataStructure;
 public class LinkedList {
     private Node head;
     private Node tail;
+    private int size;
 
 
     public void insertFirst(int val){
         Node newNode= new Node(val);
         newNode.next=head;
         head=newNode;
+        size++;
 
         if(tail==null){
             tail=head;
@@ -22,9 +24,41 @@ public class LinkedList {
         }
         tail.next=newNode;
         tail=newNode;
+        size++;
+    }
+
+    public void insertMiddle(int val,int index){
+        if(index==0) {
+            insertFirst(val);
+            return;
+        }
+        if(index==size){
+            insertEnd(val);
+            return;
+        }
+        Node temp=head;
+        for (int i = 1; i < index; i++) {
+            temp=temp.next;
+        }
+        Node newNode=new Node(val,temp.next);
+        temp.next=newNode;
+        size++;
+
+    }
+
+    public void deleteFirst(){
+        if(head==null) {
+            System.out.println("No element");
+            return;
+        }
+        head=head.next;
     }
 
     public void display(){
+        if(size==0){
+            System.out.println("Empty");
+            return;
+        }
         Node temp=head;
         while(temp!=null){
             System.out.print(temp.value+" ->");
