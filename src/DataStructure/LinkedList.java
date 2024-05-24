@@ -57,6 +57,7 @@ public class LinkedList {
     public void delteLast(){
         if(size<=1){
             deleteFirst();
+            return;
         }
 
         Node node=getByIndex(size-2);
@@ -64,7 +65,23 @@ public class LinkedList {
         size--;
 
     }
+    public void deleteMiddle(int index){
+        if(index==0){
+            deleteFirst();
+            return;
+        }if(index==size-1){
+            delteLast();
+            return;
+        }
+        if(index>size-1){
+            System.out.println("Out of Bounds");
+            return;
+        }
+        Node node=getByIndex(index-1);
+        node.next=node.next.next;
+        size--;
 
+    }
     public Node getByIndex(int index){
         if(index>size-1){
             return null;

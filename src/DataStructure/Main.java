@@ -15,6 +15,8 @@ public class Main {
         ll.getSize();
         ll.delteLast();
         ll.display();
+        ll.deleteMiddle(2);
+        ll.display();
 
 
     }
