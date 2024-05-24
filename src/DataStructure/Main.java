@@ -9,7 +9,13 @@ public class Main {
         ll.insertFirst(20);
         ll.insertEnd(55);
         ll.insertMiddle(51,2);
+        ll.display();
         ll.deleteFirst();
         ll.display();
+        ll.getSize();
+        ll.delteLast();
+        ll.display();
+
+
     }
 }

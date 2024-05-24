@@ -52,6 +52,29 @@ public class LinkedList {
             return;
         }
         head=head.next;
+        size--;
+    }
+    public void delteLast(){
+        if(size<=1){
+            deleteFirst();
+        }
+
+        Node node=getByIndex(size-2);
+        node.next=null;
+        size--;
+
+    }
+
+    public Node getByIndex(int index){
+        if(index>size-1){
+            return null;
+        }
+        Node node=head;
+        for (int i = 0; i < index; i++) {
+            node=node.next;
+        }
+
+        return node;
     }
 
     public void display(){
@@ -65,6 +88,10 @@ public class LinkedList {
             temp=temp.next;
         }
         System.out.println("End");
+    }
+
+    public void getSize(){
+        System.out.println(size);
     }
 
 
