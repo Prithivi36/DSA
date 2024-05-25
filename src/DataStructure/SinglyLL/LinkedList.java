@@ -7,9 +7,7 @@ public class LinkedList {
 
 
     public void insertFirst(int val){
-        Node newNode= new Node(val);
-        newNode.next=head;
-        head=newNode;
+        head= new Node(val,head);
         size++;
 
         if(tail==null){
