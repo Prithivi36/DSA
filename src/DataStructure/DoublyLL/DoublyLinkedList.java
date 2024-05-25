@@ -51,6 +51,44 @@ public class DoublyLinkedList {
         size++;
     }
 
+    public void insertMiddle(int val,int index){
+        if(index>size) {
+            System.out.println("Wrong Index");
+            return;
+        }
+        if(index==size){
+            insertEnd(val);
+            return;
+        }
+        if(index==0){
+            insertFirst(val);
+            return;
+        }
+        Node newNode=new Node(val);
+        Node before=find(index-1);
+        Node after=find(index);
+        newNode.next=after;
+        after.prev=newNode;
+        before.next=newNode;
+        newNode.prev=before;
+        size++;
+    }
+
+    public Node find(int index){
+        if(head==null)
+            return null;
+        if(index==0){
+            return head;
+        }
+        if(index==size-1)
+            return tail;
+
+        Node temp=head;
+        for (int i = 0; i < index; i++) {
+            temp=temp.next;
+        }
+        return temp;
+    }
 
     private class Node{
         private int val;

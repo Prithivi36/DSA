@@ -8,5 +8,9 @@ public class Main {
         dll.insertEnd(500);
         dll.display();
         dll.displayReverse();
+        dll.insertMiddle(3,0);
+        dll.display();
+        dll.displayReverse();
+
     }
 }
