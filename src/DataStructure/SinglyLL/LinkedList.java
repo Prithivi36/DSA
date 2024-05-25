@@ -1,4 +1,4 @@
-package DataStructure;
+package DataStructure.SinglyLL;
 
 public class LinkedList {
     private Node head;
