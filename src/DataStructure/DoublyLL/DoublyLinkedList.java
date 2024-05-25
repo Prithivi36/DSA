@@ -40,6 +40,17 @@ public class DoublyLinkedList {
         }
         System.out.println("Start");
     }
+    public void insertEnd(int val){
+        if(size==0||head==null) {
+            insertFirst(val);
+            return;
+        }
+        Node newNode=new Node(val,null,tail);
+        tail.next=newNode;
+        tail=newNode;
+        size++;
+    }
+
 
     private class Node{
         private int val;
