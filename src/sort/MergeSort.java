@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class MergeSort {
     public static void main(String[] args) {
         int[] array={-1,0,-3};
-        array=mergeSort(array);
+        mergeSortinPlace(array,0, array.length);
         System.out.println(Arrays.toString(array));
     }
     static public int[] mergeSort(int[] arr){
@@ -50,4 +50,44 @@ public class MergeSort {
 
         return ans;
     }
+
+    public static void mergeSortinPlace(int[] arr,int start,int end){
+        if(start==end-1)
+            return;
+        int mid=(start+end)/2;
+
+        mergeSortinPlace(arr,start,mid);
+        mergeSortinPlace(arr,mid,end);
+
+        mergeInPlace(arr,start,mid,end);
+
+    }
+
+    public static void mergeInPlace(int[] arr, int start, int mid, int end) {
+        int i=start;
+        int j=mid;
+        int k=0;
+        int[] temp=new int[end-start];
+
+        while(i<mid&&j<end){
+            if(arr[i]<arr[j]){
+                temp[k++]=arr[i++];
+            } else if (arr[j]<arr[i]) {
+                temp[k++]=arr[j++];
+            }
+        }
+        while(i<mid){
+            temp[k++]=arr[i++];
+        }
+        while (j<end){
+            temp[k++]=arr[j++];
+        }
+
+        for (int l = 0; l < temp.length; l++) {
+            arr[start+l]=temp[l];
+        }
+
+    }
+
+
 }
