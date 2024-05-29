@@ -58,5 +58,29 @@ public class CircularLinkedList {
             System.out.println("START ("+temp.val+")");
         }
     }
+    public void insertMiddle(int val,int index){
+        if(index==0){
+            insertFirst(val);
+            return;
+        }
+        if(index==size-1){
+            insertLast(val);
+            return;
+        }
+        Node found=get(index-1);
+        Node node=new Node(val,found.next);
+        found.next=node;
+        size++;
+    }
+    public Node get(int index){
+        if(index>=size)
+            return null;
+
+        Node node=head;
+        for (int i = 0; i < index; i++) {
+            node=node.next;
+        }
+        return node;
+    }
 
 }
