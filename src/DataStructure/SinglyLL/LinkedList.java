@@ -44,6 +44,13 @@ public class LinkedList {
 
     }
     public void insertUsingRecursion(int val,int index){
+        if(index==0){
+            insertFirst(val);
+            return;
+        } else if (index==size) {
+            insertEnd(val);
+            return;
+        }
         insertRecursion(val,index,head);
     }
     private Node insertRecursion(int val,int index,Node currentNode){
@@ -73,6 +80,7 @@ public class LinkedList {
 
         Node node=getByIndex(size-2);
         node.next=null;
+        tail=node;
         size--;
 
     }
