@@ -17,6 +17,8 @@ public class Main {
         ll.display();
         ll.deleteMiddle(2);
         ll.display();
+        ll.insertUsingRecursion(21,3);
+        ll.display();
 
 
     }

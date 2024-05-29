@@ -43,6 +43,19 @@ public class LinkedList {
         size++;
 
     }
+    public void insertUsingRecursion(int val,int index){
+        insertRecursion(val,index,head);
+    }
+    private Node insertRecursion(int val,int index,Node currentNode){
+        if(index==0){
+            Node node=new Node(val,currentNode);
+            size++;
+            return node;
+        }
+        index--;
+        currentNode.next=(insertRecursion(val,index, currentNode.next));
+        return currentNode;
+    }
 
     public void deleteFirst(){
         if(head==null) {
