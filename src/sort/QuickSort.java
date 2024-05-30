@@ -5,25 +5,24 @@ import java.util.Arrays;
 public class QuickSort {
 
     public static void main(String[] args) {
-        int[] arr = {5,8,3,4,7,1,2};
+        int[] arr = {-3 ,-1,0,9,-5};
         quickSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
 
     }
     static void quickSort(int[] arr, int left, int right) {
-        if (left >= right) {
+        if(left>=right){
             return;
         }
         int start=left;
         int end=right;
-        int mid = (start+end)/2;
-        int pivot = arr[mid];
-        while (start < end) {
-
-            while(arr[start]<pivot){
+        int mid=start+(end-start)/2;
+        int pivot=arr[mid];
+        while (start<end){
+            while (arr[start]<pivot) {
                 start++;
             }
-            while(arr[end]>pivot){
+            while (arr[end]>pivot){
                 end--;
             }
             if(start<=end){
@@ -34,9 +33,10 @@ public class QuickSort {
                 end--;
             }
 
+            quickSort(arr,left,end);
+            quickSort(arr,start,right);
+
         }
-        quickSort(arr,left,end);
-        quickSort(arr,start,right);
     }
 }
 
