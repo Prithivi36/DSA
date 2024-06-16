@@ -22,5 +22,31 @@ public class Main {
         ll.display();
 
 
+        //Merging Two LL
+        System.out.println("\n\nMerging Two Linked Sorted List \n");
+        LinkedList list=new LinkedList();
+
+        list.insertEnd(1);
+        list.insertEnd(3);
+        list.insertEnd(5);
+        list.insertEnd(7);
+        list.insertEnd(9);
+        list.insertEnd(10);
+        list.display();
+
+        LinkedList list2=new LinkedList();
+
+        list2.insertEnd(2);
+        list2.insertEnd(4);
+        list2.insertEnd(6);
+        list2.insertEnd(8);
+        list2.insertEnd(11);
+        list2.insertEnd(12);
+        list2.display();
+
+        LinkedList combined=LinkedList.MergeLinkedList(list.head, list2.head);
+        combined.display();
+
+
     }
 }
