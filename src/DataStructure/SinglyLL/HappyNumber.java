@@ -16,7 +16,6 @@ public class HappyNumber {
             fastPointer=findSquareOfDigit(findSquareOfDigit(fastPointer));
         }while(slowPointer!=fastPointer);
 
-
         return slowPointer==1;
     }
     public static int findSquareOfDigit(int num){
