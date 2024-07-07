@@ -19,7 +19,7 @@ public class QuickSort {
         int mid=start+(end-start)/2;
         int pivot=arr[mid];
 
-        while(start<=end){
+        while(start<end){
             while(arr[start]<pivot){
                 start++;
             }
@@ -27,11 +27,13 @@ public class QuickSort {
                 end--;
             }
 
-            int temp=arr[end];
-            arr[end]=arr[start];
-            arr[start]=temp;
-            start++;
-            end--;
+            if(start<=end){
+                int temp=arr[end];
+                arr[end]=arr[start];
+                arr[start]=temp;
+                start++;
+                end--;
+            }
         }
         quickSort(arr,left,end);
         quickSort(arr,start,right);
