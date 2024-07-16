@@ -32,6 +32,7 @@ public class Main {
         list.insertEnd(7);
         list.insertEnd(9);
         list.insertEnd(10);
+        list.insertEnd(11);
         list.display();
 
         LinkedList list2=new LinkedList();
@@ -53,6 +54,7 @@ public class Main {
         System.out.println(list2.cycleLength(list2.head));
         System.out.println(list2.cycleLength(list.head));
         System.out.println(list2.cycleNode(list2.head)==null?"No Cycle":list2.cycleNode(list2.head).value);
+        System.out.println(list.findMiddle(list.head).value);
 
     }
 }

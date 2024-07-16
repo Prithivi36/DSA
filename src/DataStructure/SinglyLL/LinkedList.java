@@ -222,28 +222,33 @@ public class LinkedList {
     public Node cycleNode(Node node){
         Node slwPointer=head;
         Node fstPointer=head;
-
         while(fstPointer!=null&&fstPointer.next!=null){
             fstPointer=fstPointer.next.next;
             slwPointer=slwPointer.next;
-
             if(fstPointer==slwPointer){
                 int cycLen=cycleLength(head);
                 fstPointer=head;
                 for (int i=0;i<cycLen;i++){
                     slwPointer=slwPointer.next;
                 }
-
                 while (slwPointer!=fstPointer){
                     slwPointer=slwPointer.next;
                     fstPointer=fstPointer.next;
                 }
-
                 return fstPointer;
             }
-        };
-
+        }
         return null;
+    }
 
+    //Finding Middle of the Linked list
+    public Node findMiddle(Node head){
+        Node fstPointer=head;
+        Node slwPointer=head;
+        while(fstPointer!=null&&fstPointer.next!=null){
+            fstPointer=fstPointer.next.next;
+            slwPointer=slwPointer.next;
+        }
+        return slwPointer;
     }
 }
