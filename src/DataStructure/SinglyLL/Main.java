@@ -47,11 +47,12 @@ public class Main {
 //        LinkedList combined=LinkedList.MergeLinkedList(list.head, list2.head);
 //        combined.display();
 
-        list2.createCycle(2);
+        list2.createCycle(3);
         System.out.println(list2.detectCycle(list2.head));
         System.out.println(list2.detectCycle(list.head));
         System.out.println(list2.cycleLength(list2.head));
         System.out.println(list2.cycleLength(list.head));
+        System.out.println(list2.cycleNode(list2.head)==null?"No Cycle":list2.cycleNode(list2.head).value);
 
     }
 }

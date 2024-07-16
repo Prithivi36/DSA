@@ -55,13 +55,13 @@ public class LinkedList {
     }
     private Node insertRecursion(int val,int index,Node currentNode){
         if(index==0){
-            Node node=new Node(val,currentNode);
-            size++;
-            return node;
+            Node newNode=new Node(val,currentNode);
+            return newNode;
         }
-        index--;
-        currentNode.next=(insertRecursion(val,index, currentNode.next));
+
+        currentNode.next=insertRecursion(val,index-1,currentNode.next);
         return currentNode;
+
     }
 
     public void deleteFirst(){
@@ -132,7 +132,7 @@ public class LinkedList {
 
 
     class Node{
-        private int value;
+        int value;
         private Node next;
 
         public Node(int val){
@@ -216,5 +216,34 @@ public class LinkedList {
         };
 
         return 0;
+    }
+
+    //Finding the Cycle Node
+    public Node cycleNode(Node node){
+        Node slwPointer=head;
+        Node fstPointer=head;
+
+        while(fstPointer!=null&&fstPointer.next!=null){
+            fstPointer=fstPointer.next.next;
+            slwPointer=slwPointer.next;
+
+            if(fstPointer==slwPointer){
+                int cycLen=cycleLength(head);
+                fstPointer=head;
+                for (int i=0;i<cycLen;i++){
+                    slwPointer=slwPointer.next;
+                }
+
+                while (slwPointer!=fstPointer){
+                    slwPointer=slwPointer.next;
+                    fstPointer=fstPointer.next;
+                }
+
+                return fstPointer;
+            }
+        };
+
+        return null;
+
     }
 }
