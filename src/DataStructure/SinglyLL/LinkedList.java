@@ -194,5 +194,27 @@ public class LinkedList {
         return false;
     }
 
+    //Cycle Length In Linked list
 
+    public int cycleLength(Node head){
+        Node slwPointer=head;
+        Node fstPointer=head;
+
+        while(fstPointer!=null&&fstPointer.next!=null){
+            fstPointer=fstPointer.next.next;
+            slwPointer=slwPointer.next;
+
+            if(fstPointer==slwPointer){
+                int len=0;
+                do{
+                    slwPointer=slwPointer.next;
+                    len++;
+                }while (fstPointer!=slwPointer);
+
+                return len;
+            }
+        };
+
+        return 0;
+    }
 }

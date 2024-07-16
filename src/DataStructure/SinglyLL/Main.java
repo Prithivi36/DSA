@@ -50,6 +50,8 @@ public class Main {
         list2.createCycle(2);
         System.out.println(list2.detectCycle(list2.head));
         System.out.println(list2.detectCycle(list.head));
+        System.out.println(list2.cycleLength(list2.head));
+        System.out.println(list2.cycleLength(list.head));
 
     }
 }
