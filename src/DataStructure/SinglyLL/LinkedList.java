@@ -171,4 +171,28 @@ public class LinkedList {
 
         return answerList;
     }
+    //Create Cycle
+    public void createCycle(int index){
+        this.tail.next=getByIndex(index);
+    }
+
+    //Cycle Detection In Linked list
+
+    public boolean detectCycle(Node head){
+        Node slwPointer=head;
+        Node fstPointer=head;
+
+        while(fstPointer!=null&&fstPointer.next!=null){
+            fstPointer=fstPointer.next.next;
+            slwPointer=slwPointer.next;
+
+            if(fstPointer==slwPointer){
+                return true;
+            }
+        };
+
+        return false;
+    }
+
+
 }

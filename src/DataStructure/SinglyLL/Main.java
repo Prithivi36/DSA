@@ -2,28 +2,28 @@ package DataStructure.SinglyLL;
 
 public class Main {
     public static void main(String[] args) {
-        LinkedList ll=new LinkedList();
-        ll.insertFirst(5);
-        ll.insertFirst(10);
-        ll.insertFirst(15);
-        ll.insertFirst(20);
-        ll.insertEnd(55);
-        ll.insertMiddle(51,2);
-        ll.display();
-        ll.deleteFirst();
-        ll.display();
-        ll.getSize();
-        ll.delteLast();
-        ll.display();
-        ll.deleteMiddle(2);
-        ll.display();
-        ll.getSize();
-        ll.insertUsingRecursion(21,3);
-        ll.display();
-
-
-        //Merging Two LL
-        System.out.println("\n\nMerging Two Linked Sorted List \n");
+//        LinkedList ll=new LinkedList();
+//        ll.insertFirst(5);
+//        ll.insertFirst(10);
+//        ll.insertFirst(15);
+//        ll.insertFirst(20);
+//        ll.insertEnd(55);
+//        ll.insertMiddle(51,2);
+//        ll.display();
+//        ll.deleteFirst();
+//        ll.display();
+//        ll.getSize();
+//        ll.delteLast();
+//        ll.display();
+//        ll.deleteMiddle(2);
+//        ll.display();
+//        ll.getSize();
+//        ll.insertUsingRecursion(21,3);
+//        ll.display();
+//
+//
+//        //Merging Two LL
+//        System.out.println("\n\nMerging Two Linked Sorted List \n");
         LinkedList list=new LinkedList();
 
         list.insertEnd(1);
@@ -44,9 +44,12 @@ public class Main {
         list2.insertEnd(12);
         list2.display();
 
-        LinkedList combined=LinkedList.MergeLinkedList(list.head, list2.head);
-        combined.display();
+//        LinkedList combined=LinkedList.MergeLinkedList(list.head, list2.head);
+//        combined.display();
 
+        list2.createCycle(2);
+        System.out.println(list2.detectCycle(list2.head));
+        System.out.println(list2.detectCycle(list.head));
 
     }
 }
