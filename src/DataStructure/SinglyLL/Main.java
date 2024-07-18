@@ -41,20 +41,14 @@ public class Main {
         list2.insertEnd(4);
         list2.insertEnd(6);
         list2.insertEnd(8);
-        list2.insertEnd(11);
+        list2.insertEnd(10);
         list2.insertEnd(12);
         list2.display();
 
-//        LinkedList combined=LinkedList.MergeLinkedList(list.head, list2.head);
-//        combined.display();
+        list2.mergeLinkedList(list.head, list2.head);
+        list.display();
 
-        list2.createCycle(3);
-        System.out.println(list2.detectCycle(list2.head));
-        System.out.println(list2.detectCycle(list.head));
-        System.out.println(list2.cycleLength(list2.head));
-        System.out.println(list2.cycleLength(list.head));
-        System.out.println(list2.cycleNode(list2.head)==null?"No Cycle":list2.cycleNode(list2.head).value);
-        System.out.println(list.findMiddle(list.head).value);
+
 
     }
 }

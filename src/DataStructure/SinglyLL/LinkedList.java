@@ -146,30 +146,42 @@ public class LinkedList {
     }
 
     //Merge Two Sorted LinkedList
-    public static LinkedList MergeLinkedList(Node head1,Node head2) {
+    public Node mergeLinkedList(Node head1,Node head2) {
         Node temp1=head1;
         Node temp2=head2;
-        LinkedList answerList=new LinkedList();
+        Node dummy=new Node(0);
+        Node tail=dummy;
         while (temp1!=null&&temp2!=null){
             if(temp1.value< temp2.value){
-                answerList.insertEnd(temp1.value);
+                tail.next=temp1;
                 temp1=temp1.next;
+                tail=tail.next;
             } else if (temp2.value< temp1.value) {
-                answerList.insertEnd(temp2.value);
+                tail.next=temp2;
                 temp2=temp2.next;
+                tail=tail.next;
+            }else{
+                tail.next=temp1;
+                temp1=temp1.next;
+                tail=tail.next;
+                tail.next=temp2;
+                temp2=temp2.next;
+                tail=tail.next;
             }
         }
         while (temp1!=null){
-            answerList.insertEnd(temp1.value);
+            tail.next=temp1;
+            tail=tail.next;
             temp1=temp1.next;
 
         }while (temp2!=null){
-            answerList.insertEnd(temp2.value);
+            tail.next=temp2;
+            tail=tail.next;
             temp2=temp2.next;
 
         }
 
-        return answerList;
+        return dummy.next;
     }
     //Create Cycle
     public void createCycle(int index){
@@ -251,4 +263,6 @@ public class LinkedList {
         }
         return slwPointer;
     }
+
+
 }
