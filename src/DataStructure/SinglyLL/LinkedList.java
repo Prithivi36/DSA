@@ -133,7 +133,7 @@ public class LinkedList {
 
     class Node{
         int value;
-        private Node next;
+        Node next;
 
         public Node(int val){
             this.value=val;
@@ -264,5 +264,27 @@ public class LinkedList {
         return slwPointer;
     }
 
+    //Sorting a Linked list
+    public Node sortLinkedList(Node head){
+        if(head==null||head.next==null){
+            return head;
+        }
+        Node mid=getMiddle(head);
+        Node left=sortLinkedList(head);
+        Node right=sortLinkedList(mid);
 
+        return mergeLinkedList(left,right);
+    }
+    public Node getMiddle(Node head){
+        Node slw=head;
+        Node fst=head;
+        Node temp=slw;
+        while(fst!=null&&fst.next!=null){
+            temp=slw;
+            fst=fst.next.next;
+            slw=slw.next;
+        }
+        temp.next=null;
+        return slw;
+    }
 }
