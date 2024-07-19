@@ -47,12 +47,18 @@ public class Main {
 
 //        list2.mergeLinkedList(list.head, list2.head);
 //        list.display();
-        LinkedList.Node head= list2.sortLinkedList(list2.head);
-        while(head!=null){
-            System.out.print(head.value +" ->");
-            head=head.next;
+        LinkedList.Node lstNode=list2.head;
+        while (lstNode.next!=null){
+            lstNode=lstNode.next;
         }
+        LinkedList.Node head= list2.reverseLinkedList(list2.head);
+        while(lstNode!=null){
+            System.out.print(lstNode.value +" ->");
+            lstNode=lstNode.next;
+        }
+
         System.out.println("END");
+//        list2.display();
 
 
 

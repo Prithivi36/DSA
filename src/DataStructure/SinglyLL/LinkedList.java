@@ -287,4 +287,18 @@ public class LinkedList {
         temp.next=null;
         return slw;
     }
+
+    //Reverse Elements of Linked List
+    public Node reverseLinkedList(Node head){
+
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        Node newHead = reverseLinkedList(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return newHead;
+    }
 }
