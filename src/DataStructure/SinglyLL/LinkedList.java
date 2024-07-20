@@ -291,14 +291,20 @@ public class LinkedList {
     //Reverse Elements of Linked List
     public Node reverseLinkedList(Node head){
 
-        if (head == null || head.next == null) {
+        Node ans=null;
+        if (head.next == null) {
+            ans=head;
             return head;
         }
+        if(ans==null){
+            Node newHead = reverseLinkedList(head.next);
+            head.next.next = head;
+            head.next = null;
+            return newHead;
+        }
 
-        Node newHead = reverseLinkedList(head.next);
-        head.next.next = head;
-        head.next = null;
+        return ans;
 
-        return newHead;
     }
+
 }
