@@ -306,5 +306,23 @@ public class LinkedList {
         return ans;
 
     }
+    //Reverse Element of Linked list easier way
 
+    public Node reverseLL(Node head){
+        Node prev=null;
+        Node present=head;
+        Node next=present.next;
+
+        while(present!=null){
+
+            present.next=prev;
+            prev=present;
+            present=next;
+            if(next!=null){
+                next=next.next;
+            }
+
+        }
+        return prev;
+    }
 }

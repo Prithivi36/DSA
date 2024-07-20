@@ -56,6 +56,12 @@ public class Main {
 
         System.out.println("END");
 
+        LinkedList.Node reversed =list.reverseLL(list.head);
+        while(reversed!=null){
+            System.out.print(reversed.value+ " ->");
+            reversed=reversed.next;
+        }
+        System.out.println("END");
 
 
 
