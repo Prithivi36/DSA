@@ -12,5 +12,6 @@ public class Main {
         BinarySearchTree bst=new BinarySearchTree();
         bst.populate(new int[]{10,3,5,2,19,21,6});
         bst.display();
+        bst.printHeight();
     }
 }

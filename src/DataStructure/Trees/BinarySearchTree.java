@@ -5,14 +5,17 @@ public class BinarySearchTree {
     class Node{
         Node right;
         Node left;
-        int height;
+        int height=0;
         int value;
         public Node(int value){
             this.value=value;
         }
-        public int height(){
-            return this.height;
-        }
+
+    }
+    public int height(Node node){
+        if(node==null)
+            return -1;
+        return node.height;
     }
     public void display(){
         display("Root Node :",root);
@@ -45,6 +48,22 @@ public class BinarySearchTree {
         } else if (value>node.value) {
             node.right=insert(node.right,value);
         }
+        node.height=Math.max(height(node.left), height(node.right))+1;
         return node;
+    }
+    public void printHeight(){
+        printHeight("Height of root is",root);
+    }
+    public void printHeight(String message,Node node){
+        if(node==null){
+            return;
+        }
+        System.out.println(message+node.height);
+        if(node.left!=null){
+            printHeight(node.left.value+"'s height is",node.left);
+        }
+        if(node.right!=null){
+            printHeight(node.right.value+"'s height is",node.right);
+        }
     }
 }
