@@ -66,4 +66,15 @@ public class BinarySearchTree {
             printHeight(node.right.value+"'s height is",node.right);
         }
     }
+    public boolean isBalanced(){
+        return isBalanced(root);
+    }
+    public boolean isBalanced(Node node){
+        if(node==null){
+            return true;
+        }
+        isBalanced(node.left);
+        isBalanced(node.right);
+        return Math.abs(height(node.left)-height(node.right))<1;
+    }
 }
