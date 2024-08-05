@@ -1,5 +1,8 @@
 package DataStructure.Trees;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BinarySearchTree {
     Node root;
     class Node{
@@ -77,4 +80,19 @@ public class BinarySearchTree {
         isBalanced(node.right);
         return Math.abs(height(node.left)-height(node.right))<1;
     }
+    public void prefix(){
+        System.out.println("Prefix Traversal");
+        prefix(root);
+
+    }
+    public void prefix(Node node){
+        if(node==null){
+            return;
+        }
+        System.out.print(node.value + " ");
+        prefix(node.left);
+        prefix(node.right);
+
+    }
+
 }

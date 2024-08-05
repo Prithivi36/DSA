@@ -9,9 +9,11 @@ public class Main {
         //binaryTree.print();
         //BST
         BinarySearchTree bst=new BinarySearchTree();
-        bst.populate(new int[]{10,3,5,2,19,21,15});
+        bst.populate(new int[]{10,3,5,2,19,21,6});
         bst.display();
         bst.printHeight();
         System.out.println(bst.isBalanced());
+        bst.prefix();
+
     }
 }
