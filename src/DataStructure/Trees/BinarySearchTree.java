@@ -106,5 +106,16 @@ public class BinarySearchTree {
         System.out.print(node.value +" ");
         prefix(node.right);
     }
-
+    public void postfix(){
+        System.out.println("\nPostfix Traversal");
+        postfix(root);
+    }
+    public void postfix(Node node){
+        if(node ==null){
+            return;
+        }
+        postfix(node.left);
+        postfix(node.right);
+        System.out.print(node.value+" ");
+    }
 }

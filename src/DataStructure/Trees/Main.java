@@ -15,5 +15,6 @@ public class Main {
         System.out.println(bst.isBalanced());
         bst.prefix();
         bst.infix();
+        bst.postfix();
     }
 }
