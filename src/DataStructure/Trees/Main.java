@@ -14,6 +14,6 @@ public class Main {
         bst.printHeight();
         System.out.println(bst.isBalanced());
         bst.prefix();
-
+        bst.infix();
     }
 }

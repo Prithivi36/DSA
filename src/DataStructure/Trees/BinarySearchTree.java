@@ -94,5 +94,17 @@ public class BinarySearchTree {
         prefix(node.right);
 
     }
+    public void infix(){
+        System.out.println("\nInfix Traversal");
+        infix(root);
+    }
+    public void infix(Node node){
+        if(node==null){
+            return;
+        }
+        prefix(node.left);
+        System.out.print(node.value +" ");
+        prefix(node.right);
+    }
 
 }
