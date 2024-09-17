@@ -43,6 +43,7 @@ public class AvlTree {
             node.right=insert(node.right,val);
         }
         node.height=Math.max(getHeight(node.left),getHeight(node.right));
+//        arrange(node);
         return node;
 
     }

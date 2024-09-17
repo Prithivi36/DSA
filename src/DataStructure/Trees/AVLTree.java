@@ -42,18 +42,6 @@ public class AVLTree {
         }
         root=insert(root,value);
     }
-    public Node insert(Node node ,int value){
-        if(node==null){
-            return new Node(value);
-        }
-        if(value<node.value){
-            node.left=insert(node.left,value);
-        } else if (value>node.value) {
-            node.right=insert(node.right,value);
-        }
-        node.height=Math.max(height(node.left), height(node.right))+1;
-        return rotate(node);
-    }
     public Node rightRotate(Node node){
         Node c =node.left;
         Node t=node.left.right;
@@ -77,6 +65,18 @@ public class AVLTree {
 
         return c;
 
+    }
+    public Node insert(Node node ,int value){
+        if(node==null){
+            return new Node(value);
+        }
+        if(value<node.value){
+            node.left=insert(node.left,value);
+        } else if (value>node.value) {
+            node.right=insert(node.right,value);
+        }
+        node.height=Math.max(height(node.left), height(node.right))+1;
+        return rotate(node);
     }
     public Node rotate(Node node){
         //left weighted
